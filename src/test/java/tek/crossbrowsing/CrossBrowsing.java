@@ -1,4 +1,4 @@
-package crossbrowsing;
+package tek.crossbrowsing;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 

@@ -1,9 +1,11 @@
-package review.week1;
+package tek.review.week1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.TreeSet;
 
 public class Activity1 {
 
@@ -56,6 +58,8 @@ public class Activity1 {
         By profileLocator = By.id("profileImage");
         WebElement profileElement = driver.findElement(profileLocator);
 
+        Thread.sleep(3000);
+
         boolean isProfileDisplayed = profileElement.isDisplayed();
 
         if (isProfileDisplayed){
@@ -63,6 +67,8 @@ public class Activity1 {
         }else {
             System.out.println("Test Failed");
         }
+
+        Thread.sleep(3000);
 
         driver.quit();
 

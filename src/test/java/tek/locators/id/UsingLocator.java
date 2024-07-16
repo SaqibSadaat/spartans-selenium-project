@@ -1,4 +1,4 @@
-package locators;
+package tek.locators.id;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
