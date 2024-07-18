@@ -41,8 +41,5 @@ public class Locator {
        logoutBtnElement.click();
 
 
-
-
-
     }
 }

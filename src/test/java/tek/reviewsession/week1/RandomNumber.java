@@ -1,4 +1,4 @@
-package tek.review.week1;
+package tek.reviewsession.week1;
 
 public class RandomNumber {
     public static void main(String[] args) {

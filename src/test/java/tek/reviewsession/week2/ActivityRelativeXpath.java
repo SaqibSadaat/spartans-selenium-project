@@ -1,4 +1,4 @@
-package rough;
+package tek.reviewsession.week2;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,5 +17,7 @@ public class ActivityRelativeXpath {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
+
+
     }
 }

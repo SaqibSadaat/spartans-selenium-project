@@ -6,44 +6,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Activity1 {
+    /*
+In Retail app go to create new account
+and create new account.
+use name, id, linkText or anything that is available.
+15 Minute.
+ */
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
+        driver.manage().window().maximize();
 
-//        By signInLocator = By.linkText("Sign in");
-//        WebElement signInElement = driver.findElement(signInLocator);
-//        signInElement.click();
+        By signInLocator = By.linkText("Sign in");
+        WebElement signInElement = driver.findElement(signInLocator);
+        signInElement.click();
 
-        driver.findElement(By.linkText("Sign in")).click();
+        driver.findElement(By.linkText("Create New Account")).click();
 
-        By createNewAccountBtnLocator = By.linkText("Create New Account");
-        WebElement createNewAccountBtnElement = driver.findElement(createNewAccountBtnLocator);
-        createNewAccountBtnElement.click();
+        driver.findElement(By.name("name")).sendKeys("Mohammad");
 
-        By nameLocator = By.id("nameInput");
-        WebElement nameElement = driver.findElement(nameLocator);
-        nameElement.sendKeys("Saqib");
+        driver.findElement(By.name("email")).sendKeys("SaqibAf@gmail.com");
 
-        By emailLocator = By.id("emailInput");
-        WebElement emailElement = driver.findElement(emailLocator);
-        emailElement.sendKeys("SaqibAf@gmail.com");
+        driver.findElement(By.name("password")).sendKeys("Saqib@123");
 
-        By passwordLocator = By.id("passwordInput");
-        WebElement passwordElement = driver.findElement(passwordLocator);
-        passwordElement.sendKeys("Saqib@123");
+        driver.findElement(By.name("confirmPassword")).sendKeys("Saqib@123");
 
-        By confirmPasswordLocator = By.id("confirmPasswordInput");
-        WebElement confirmPasswordElement = driver.findElement(confirmPasswordLocator);
-        confirmPasswordElement.sendKeys("Saqib@123");
+        driver.findElement(By.id("signupBtn")).click();
 
-        By signUpBtnLocator = By.id("signupBtn");
-        WebElement signUpBtnElement = driver.findElement(signUpBtnLocator);
-        signUpBtnElement.click();
+        String errorText = driver.findElement(By.className("error")).getText();
+
+        System.out.println(errorText);
 
         driver.quit();
-
-
-
     }
 }
