@@ -1,4 +1,4 @@
-package tek.reviewsession.week2;
+package tek.reviewsession.week1;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
