@@ -9,6 +9,7 @@ public class AbsoluteXpath {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+        // double forward slash used for Xpath
         driver.get("https://retail.tekschool-students.com/");
 
         Thread.sleep(3000);

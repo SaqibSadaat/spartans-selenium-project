@@ -11,16 +11,20 @@ public class RelativeXpath {
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
-        By smartHomeTextLocator = By.xpath("//h1[text()='Smart Home'] "); //This is just text.
+        // double forward slash used for Xpath
+        //When you used tag after // it means this is relative Xpath.
+
+        By smartHomeTextLocator = By.xpath("//h1[text()='Smart Home'] "); //h1 tag is always used for font size in html and this is just select text.
         WebElement smartHomeTextElement = driver.findElement(smartHomeTextLocator);
         smartHomeTextElement.click();
 
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
-        By bulbLocator = By.xpath("//img[@alt='Smart Home Lightning']");
-        WebElement bulbElement = driver.findElement(bulbLocator);
-        bulbElement.click();
+//        By bulbLocator = By.xpath("//img[@alt='Smart Home Lightning']");
+//        WebElement bulbElement = driver.findElement(bulbLocator);
+//        bulbElement.click();
+        driver.findElement(By.xpath("//img[@alt='Smart Home Lightning']")).click();
     }
 }
