@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
 
@@ -23,26 +25,28 @@ public class Activity1 {
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
 
+        // Set implicit wait to 20 seconds
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.findElement(By.id("signinLink")).click();
 
-        driver.findElement(By.id("email")).sendKeys("saqibaf@gmail.com");
+        driver.findElement(By.id("email")).sendKeys("saqib123@gmail.com");
 
        driver.findElement(By.id("password")).sendKeys("Saqib@123");
 
         driver.findElement(By.id("loginBtn")).click();
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         driver.findElement(By.xpath("//a[@id='accountLink']")).click();
 
-        driver.findElement(By.id("personalPhoneInput")).sendKeys("9161112345");
+        driver.findElement(By.xpath("//input[@id='nameInput']")).sendKeys("Ali");
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         driver.findElement(By.id("personalUpdateBtn")).click();
 
-        driver.quit();
+//        driver.quit();
 
 
     }
