@@ -10,7 +10,6 @@ import java.time.Duration;
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
 
-
         /*
         in retail sign in with valid credentials and go to account page.
         update phone number, and validate Success toast is displayed.
@@ -19,8 +18,6 @@ public class Activity1 {
         use any locators available and you like.
         Push to repository.
          */
-
-
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
