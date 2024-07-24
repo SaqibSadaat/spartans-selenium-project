@@ -2,8 +2,10 @@ package tek.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -12,38 +14,35 @@ public class Activity3 {
 
     public static void main(String[] args) throws InterruptedException {
 
-        /*
-        in Retail app under computer section choose accessories and then choose
-        Keyboard and change quantity to 5.
-        use implicit wait.
-        use Explicit wait for all elements.
-        Push to repository.
-         */
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://retail.tekschool-students.com/");
+          /*
+    In Retail app under computer section choose accessories and then choose
+    keyboard and change quantity to 5.
+    use implicit wait.
+    use Explicit wait for all elements.
+    push to your repository.
+     */
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://retail.tekschool-students.com/");
 
-        // Set implicit wait to 20 seconds
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().maximize();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("signinLink")))
-                .click();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")))
-                        .sendKeys("saqib123@gmail.com");
+            wait.until(ExpectedConditions
+                            .elementToBeClickable(By.xpath("//img[@alt='Accessories']")))
+                    .click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")))
-                        .sendKeys("Saqib@123");
+            wait.until(ExpectedConditions
+                            .elementToBeClickable(By.xpath("//div[@class='products']/div[2]/img")))
+                    .click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("loginBtn")))
-                .click();
+            WebElement quantityElement  = wait.until(ExpectedConditions
+                    .visibilityOfElementLocated(By.className("product__select")));
 
-
-
-//        driver.quit();
-
+            Select quantitySelect = new Select(quantityElement);
+            quantitySelect.selectByVisibleText("4");
 
     }
 }

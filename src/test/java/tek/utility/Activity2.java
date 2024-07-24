@@ -7,24 +7,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Activity2 {
+     /*
+    From the page https://retail.tekschool-students.com/selenium/dropdown
+    Select website's language drop down select last option
+     */
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/selenium/dropdown");
+        driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         WebElement languageElement = driver.findElement(By.id("languageSelect"));
 
-        Select selectIndex = new Select(languageElement);
-        selectIndex.selectByValue("Italian"); //Select Dropdown option using Value
+        Select select = new Select(languageElement);
+        List<WebElement> options =select.getOptions();
+        int size = options.size();
 
-        Thread.sleep(3000);
+        select.selectByIndex(size - 1);
 
-        driver.quit();
+
 
     }
 }
