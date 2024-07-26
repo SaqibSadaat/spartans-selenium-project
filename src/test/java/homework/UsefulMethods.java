@@ -1,4 +1,4 @@
-package tek.utility.ReusableObject72424;
+package homework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+
 public class UsefulMethods {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
