@@ -13,9 +13,7 @@ public class WindowHandlingMohammad {
     Get current window id. before new tab open
     then open new tab.
     get all tabs id. (Make sure to have only 2 tab)
-    Loop through all tabs and switch to new tab when the is not equals to current tab.
-     */
-
+    Loop through all tabs and switch to new tab when the is not equals to current tab.*/
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://retail.tekschool-students.com/");
