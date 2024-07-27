@@ -12,14 +12,14 @@ import java.time.Duration;
 public class rough {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
-        driver.get("https://retail.tekschool-students.com/selenium/javascript-alerts");
+        driver.get("https://retail.tekschool-students.com/selenium/challenging-dom");
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("alertBtn")))
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table/tbody/tr[1]/td[4]/button[1]")))
                 .click();
 
     }

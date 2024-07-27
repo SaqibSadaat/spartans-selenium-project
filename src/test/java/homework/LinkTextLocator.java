@@ -11,7 +11,7 @@ public class LinkTextLocator {
         driver.get("https://retail.tekschool-students.com/");
         driver.manage().window().maximize();
 
-        //This is LinkText locator method.
+        //When the tab is Anchor You can use linkText i.e. --> <a
         driver.findElement(By.linkText("Sign in"))
                 .click();
 

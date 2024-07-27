@@ -8,7 +8,7 @@
 }
 
 div > h3 {
-  background-color: blue
+  background-color: gray
 }
 
 div > h3:first-child {
@@ -20,7 +20,7 @@ color: green
 }
 
 div > h3:nth-child(2)  {
-color: white
+color: black
 }
 
 input[type='password'] {

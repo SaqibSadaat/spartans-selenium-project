@@ -1,4 +1,4 @@
-package homework;
+package needsToBeDone;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,31 +51,24 @@ push to repository.
                 .click();
 
         // Wait until the "Account" link is clickable and click it
-        wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Account")))
-                .click();
-
-        // Wait until the phone number input field is visible
-        WebElement phoneElement = wait.until(ExpectedConditions
+        wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Account"))).click();
+        WebElement phoneElement = wait.until(ExpectedConditions // Wait until the phone number input field is visible
                 .visibilityOfElementLocated(By.name("phoneNumber")));
 
-        // Clear the current phone number in the input field
-        phoneElement.clear();
+        phoneElement.clear();// Clear the current phone number in the input field
 
-        // Generate a random 10-digit phone number
-        String number = getRandomPhoneNumber();
+        String number = getRandomPhoneNumber(); // Generate a random 10-digit phone number
         System.out.println("random number " + number); // Print the generated phone number to the console
         phoneElement.sendKeys(number);// Enter the generated phone number into the input field
 
         // Wait until the personal update button is clickable and click it
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("personalUpdateBtn")))
-                .click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("personalUpdateBtn"))).click();
 
         // Wait until the toast message is visible and check if it is displayed
         boolean isToastDisplayed = wait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.className("Toastify"))).isDisplayed();
 
-        // Get the text of the toast message
-        String toastText = wait.until(ExpectedConditions.
+        String toastText = wait.until(ExpectedConditions.// Get the text of the toast message
                         visibilityOfElementLocated
                                 (By.cssSelector(".Toastify div.Toastify__toast-body > div:last-child")))
                 .getText();
@@ -88,10 +81,8 @@ push to repository.
         else
             System.out.println("Test Failed");
 
-        // Close the browser and quit the WebDriver session
-        driver.quit();
+        driver.quit(); // Close the browser and quit the WebDriver session
     }
-
     // Method to generate a random 10-digit phone number
     private static String getRandomPhoneNumber() {
         // Create a Random object
