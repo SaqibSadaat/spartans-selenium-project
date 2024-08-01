@@ -20,7 +20,7 @@ public class FrameHandling {
         //  driver.switchTo().frame(0);
 
         //option 2) switching to frame using WebElement
-        WebElement frameElement  =driver.findElement(By.xpath("//iframe[@title='Iframe Example']"));
+        WebElement frameElement = driver.findElement(By.xpath("//iframe[@title='Iframe Example']"));
         driver.switchTo().frame(frameElement);
 
 

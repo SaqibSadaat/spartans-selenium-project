@@ -1,8 +1,12 @@
 package practice;
 
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,16 +15,11 @@ import java.time.Duration;
 
 public class rough {
     public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://retail.tekschool-students.com/selenium/challenging-dom");
+        WebDriver driver = new FirefoxDriver();
+        driver.get("https://www.amazon.com/");
         driver.manage().window().maximize();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table/tbody/tr[1]/td[4]/button[1]")))
-                .click();
 
     }
 }
